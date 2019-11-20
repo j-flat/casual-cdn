@@ -1,4 +1,4 @@
-resource "google_compute_firewall" "allow_http" {
+resource "google_compute_firewall" "allow-http" {
     name = "allow-http"
     network = "default"
 
@@ -7,10 +7,10 @@ resource "google_compute_firewall" "allow_http" {
         ports = ["80", "8080"]
     }
 
-    target_tags = ["allow-http"]
+    target_tags = ["http-server"]
 }
 
-resource "google_compute_firewall" "allow_https" {
+resource "google_compute_firewall" "allow-https" {
     name = "allow-https"
     network = "default"
 
@@ -19,10 +19,10 @@ resource "google_compute_firewall" "allow_https" {
         ports = ["443"]
     }
 
-    target_tags = ["allow-https"]
+    target_tags = ["https-server"]
 }
 
-resource "google_compute_firewall" "allow_ssh" {
+resource "google_compute_firewall" "allow-ssh" {
     name = "allow-ssh"
     network = "default"
 
