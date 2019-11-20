@@ -1,9 +1,9 @@
-resource "google_compute_firewall" "allow_http" {
+resource "google_compute_firewall" "allow_http" {
     name = "allow-http"
     network = "default"
 
     allow {
-        protocol "tcp"
+        protocol = "tcp"
         ports = ["80", "8080"]
     }
 
